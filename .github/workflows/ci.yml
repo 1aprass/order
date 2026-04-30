@@ -1,5 +1,8 @@
 name: CI/CD
 
+permissions:
+  contents: write
+
 on:
   push:
     branches: [ main, master ]
@@ -35,6 +38,7 @@ jobs:
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: target/site/jacoco/jacoco.xml
 
       - name: Upload JAR artifact
         uses: actions/upload-artifact@v4

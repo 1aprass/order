@@ -1,3 +1,17 @@
+## Описание проекта
+
+CRUD сервис для управления заказами с использованием Spring Boot и in-memory базы данных H2.
+
+### Функциональность:
+- Создание, чтение, обновление, удаление заказов 
+- Эндпоинт /load для создания искусственной нагрузки 
+- Логирование всех уровней (TRACE, DEBUG, INFO, WARN, ERROR)
+- Тесты с покрытием >50%
+- Сбор метрик через Actuator и Prometheus
+- Визуализация в Grafana
+- CI/CD пайплайн в GitHub Actions
+- Docker контейнеризация
+- 
 ## Запуск проекта
 
 ### В IntelliJ IDEA
@@ -15,6 +29,7 @@ docker build -t order-service .
 # Запустить контейнер
 docker run -p 8080:8080 order-service
 
+[![Coverage Status](https://coveralls.io/repos/github/1aprass/order/badge.svg)](https://coveralls.io/github/1aprass/order)
 
 ### Thread dump
 
