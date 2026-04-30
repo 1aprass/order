@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: order
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics,threaddump,heapdump
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    tags:
+      application: order-service
+
+  observations:
+    http:
+      server:
+        requests:
+          name: http.server.requests
+
+logging:
+  level:
+    ru.neoflex.order: TRACE
